@@ -49,6 +49,7 @@ create table usager
 		prenom varchar(50),
 		civilite enum("Femme", "Homme", "Autre"),
 		datenaiss date,
+		payement boolean,
 		primary key(nom),
 		foreign key(adresse) references adresse
 	);
@@ -66,4 +67,4 @@ insert into habitation values
 	("11 rue du Leader Price", 1, 93120, "Saint-Denis-Capital", "Residence");
 
 insert into usager values
-	("JEAN", "11 rue du Leader Price", "Pierre", "Autre", "1988-08-07");
+	("JEAN", "11 rue du Leader Price", "Pierre", "Autre", "1988-08-07", TRUE);
