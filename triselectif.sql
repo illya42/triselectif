@@ -15,7 +15,7 @@ create table levee
 	(
 		num int(5) not null auto_increment,
 		datelevee date,
-		poids float(5,2),
+		poids float(5.2),
 		primary key(num)
 	);
 
@@ -55,3 +55,15 @@ create table usager
 
 insert into type_dechet values
 	(1, "Verre", FALSE, "10.6");
+
+insert into levee values
+	(1, "2018-04-16", "24.2");
+
+insert into poubelle values
+	(1, 1, 1, "vert", 1);
+
+insert into habitation values
+	("11 rue du Leader Price", 1, 93120, "Saint-Denis-Capital", "Residence");
+
+insert into usager values
+	("JEAN", "11 rue du Leader Price", "Pierre", "Autre", "1988-08-07");
