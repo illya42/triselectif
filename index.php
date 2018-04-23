@@ -33,9 +33,99 @@
 
 //						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MESSAGE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
 
-			case 4:
+			case 1:
+					if(isset($_GET['action']) && isset($_GET['adresse']))
+					{
+						$action = $_GET['action'];
+						$adresse = $_GET['adresse'];
+						if($action == "X")
+						{
+							deleteHabitationC($adresse);
+						}
+						else if ($action == "E")
+						{
+							$resultat = selectWhereIdHabitationC ($adresse);
+							
+						}
+					}
+
+					if(isset($_POST['Modifier']))
+					{
+						updateHabitationC($_POST) ;
+						$resultat = null;
+					}
+
+					if(isset($_POST["Enregistrer"]))
+					{
+						insertHabitationC($_POST);
+					}
+					
+			$resultats = selectAllC("habitation");
+				include("vue/vuehabitation.php");
+			break;
 				
-				if(isset($_GET['action']) && isset($_GET['code']))
+				
+				case 2:
+					if(isset($_GET['action']) && isset($_GET['codep']))
+						{
+							$action = $_GET['action'];
+							$codep = $_GET['codep'];
+							if($action == "X")
+								{
+									deletePoubelleC($codep);
+								}
+							else if ($action == "E")
+								{
+									$resultat = selectWhereIdPoubelleC ($codep);										
+								}
+						}
+
+					if(isset($_POST['Modifier']))
+						{
+							updatePoubelleC($_POST) ;
+							$resultat = null;
+						}
+
+					if(isset($_POST["Enregistrer"]))
+						{
+							insertPoubelleC($_POST);
+						}
+
+					$resultats = selectAllC("poubelle");
+					include("vue/vuepoubelle.php");
+					break;
+
+				case 3:
+					if(isset($_GET['action']) && isset($_GET['num']))
+						{
+							$action = $_GET['action'];
+							$num = $_GET['num'];
+							if($action == "X")
+								{
+									deleteLeveeC($num);
+								}
+								else if ($action == "E")
+									{
+										$resultat = selectWhereIdLeveeC ($num);	
+									}
+						}
+
+					if(isset($_POST['Modifier']))
+						{
+							updateLeveeC($_POST) ;
+							$resultat = null;
+						}
+
+					if(isset($_POST["Enregistrer"]))
+						{
+							insertLeveeC($_POST);
+						}
+					$resultats = selectAllC("levee");
+					include("vue/vuelevee.php");
+					break;
+
+				case 4:
+					if(isset($_GET['action']) && isset($_GET['code']))
 				{
 					$action = $_GET['action'];
 					$code = $_GET['code'];
@@ -64,7 +154,7 @@
 
 				$resultats = selectAll_C("type_dechet");
 				include("vue/vuetypedechets.php");
-			break;
+			break;	
 		}
 		?>
 </body>
