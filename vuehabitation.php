@@ -25,7 +25,7 @@
 			?>
 	</table>
 		<br/>
-			<h2>Ajout d'un type de déchet</h2>
+			<h2>Ajout d'une habitation</h2>
 				<form method="post" action="">
 
 					<table border= 1 >

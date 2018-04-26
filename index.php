@@ -131,11 +131,11 @@
 					$code = $_GET['code'];
 					if($action == "X")
 					{
-						delete_type_dechet_C ($code);
+						deleteTypeDechetC ($code);
 					}
 					else if ($action == "E")
 					{
-						$resultat = selectWhereId_type_dechet_C ($code);
+						$resultat = selectWhereIdTypeDechetC ($code);
 						
 						var_dump($resultat);
 					}
@@ -143,16 +143,16 @@
 
 				if(isset($_POST['Modifier']))
 				{
-					update_type_dechet_C($_POST) ;
+					updateTypeDechetC($_POST) ;
 					$resultat = null;
 				}
 
 				if(isset($_POST["Enregistrer"]))
 				{
-					insert_type_dechet_C ($_POST);
+					insertTypeDechetC ($_POST);
 				}
 
-				$resultats = selectAll_C("type_dechet");
+				$resultats = selectAllC("type_dechet");
 				include("vue/vuetypedechets.php");
 			break;	
 		}

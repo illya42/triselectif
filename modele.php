@@ -11,7 +11,7 @@ function deconnexion ($con)
         mysqli_close($con);
     }
     
-function selectAll_M ($table)
+function selectAllM ($table)
     {
         $con = connexion();
         $requete ="select * from " .$table. ";";

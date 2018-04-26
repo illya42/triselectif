@@ -1,5 +1,5 @@
 <center>
-	<h2> Types de déchets </h2>
+	<h2> Levee </h2>
 	<br/>
 	<table border = 1>
 		<tr><td> Numero </td>
@@ -23,7 +23,7 @@
 			?>
 	</table>
 		<br/>
-			<h2>Ajout d'un type de déchet</h2>
+			<h2>Ajout levee</h2>
 				<form method="post" action="">
 
 					<table border= 1 >
