@@ -106,3 +106,26 @@
 	{
 		updateLeveeM ($tab);
 	}
+
+//						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Usager !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
+
+	function insertUsagerC ($tab)
+	{
+		insertTypeUsagerM($tab);
+	}
+
+	function deleteUsagerC ($nom)
+	{
+		deleteUsagerM ($nom);
+	}
+
+	function selectWhereIdUsagerC ($nom)
+	{
+		$resultat = selectWhereIdUsagerM ($nom);
+		return $resultat;
+	}
+
+	function updateUsagerC ($tab)
+	{
+		updateUsagerM ($tab);
+	}

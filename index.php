@@ -191,11 +191,6 @@
 					$resultat = null;
 				}
 
-				if(isset($_POST["Enregistrer"]))
-				{
-					insertUsagerC ($_POST);
-				}
-
 				$resultats = selectAllC("usager");
 				include("vue/vueusagers.php");
 			break;	

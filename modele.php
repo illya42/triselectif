@@ -94,7 +94,7 @@ function selectAllM ($table)
         $con = connexion();
         $requete = "insert into habitation values
             (
-            '".$tab["adresse"]."',
+            '".$tab['adresse']."',
             '".$tab["codep"]."',
             '".$tab["CP"]."',
             '".$tab["ville"]."',
@@ -110,7 +110,7 @@ function selectAllM ($table)
     function deleteHabitationM ($adresse)
     {
         $con = connexion();
-        $requete = "delete from habitation where adresse = ".$adresse.";";
+        $requete = "delete from habitation where adresse = '".$adresse."';";
 
         echo $requete;
 
@@ -275,6 +275,74 @@ function selectAllM ($table)
         poids =    '".$tab['poids'].       "'
         
         where num = ".$tab['num'].";";
+
+        echo $requete;
+
+        mysqli_query($con, $requete);
+        deconnexion($con);
+    }
+
+//                      [ ## TABLE : usagers ##]                     //
+
+       function insertUsagerM ($tab)
+    {
+        $con = connexion();
+        $requete = "insert into usager values
+            (
+            '".$tab["nom"]."',
+            '".$tab["adresse"]."',
+            '".$tab["prenom"]."',
+            '".$tab["civilite"]."',
+            '".$tab["datenaiss"]."',
+            '".$tab["payement"]."'
+            );";
+
+        echo $requete;
+
+        mysqli_query($con, $requete);
+        deconnexion($con);
+    }
+
+    function deleteUsagerM ($nom)
+    {
+        $con = connexion();
+        $requete = "delete from usager where nom = ".$nom.";";
+
+        echo $requete;
+
+        mysqli_query($con, $requete);
+        deconnexion($con);
+    }
+
+    function selectWhereIdUsagerM ($nom)
+    {
+        $con = connexion();
+        $requete = "select * from usager where nom = '".$nom."';";
+
+        $resultat = mysqli_query($con, $requete);
+        $ligne = mysqli_fetch_assoc($resultat);
+
+        echo $requete;
+
+        deconnexion($con);
+
+        return $ligne;
+    }
+
+    function updateUsagerM ($tab)
+    {
+        $con = connexion();
+        $requete = 
+        "update usager
+        set 
+        nom =          '".$tab['nom'].       "', 
+        adresse =       '".$tab['adresse'].             "',
+        prenom =          '".$tab['prenom'].       "',
+        civilite =          '".$tab['civilite'].       "',
+        datenaiss =          '".$tab['datenaiss'].       "',
+        payement =    '".$tab['payement'].       "'
+        
+        where nom = '".$tab['nom']."';";
 
         echo $requete;
 
