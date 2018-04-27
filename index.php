@@ -1,4 +1,6 @@
 <?php
+	require 'inc/header.php';
+
 	include("controleur/controleur.php")
 ?>
 
@@ -7,6 +9,9 @@
 <head>
 	<meta charset="utf-8" />
 		<link href="style.css" rel="stylesheet" type="text/css" media="all" />
+	</br>
+	</br>
+	</br>
 	<title> Tri Sélectif </title>
 </head>
 <body>
@@ -163,7 +168,46 @@
 
 //						[ ## TABLE : Usager ##] 					//
 
+				case 5:
+					if(isset($_GET['action']) && isset($_GET['nom']))
+				{
+					$action = $_GET['action'];
+					$nom = $_GET['nom'];
+					if($action == "X")
+					{
+						deleteUsagerC ($nom);
+					}
+					else if ($action == "E")
+					{
+						$resultat = selectWhereIdUsagerC ($nom);
+						
+						var_dump($resultat);
+					}
+				}
+
+				if(isset($_POST['Modifier']))
+				{
+					updateUsagerC($_POST) ;
+					$resultat = null;
+				}
+
+				if(isset($_POST["Enregistrer"]))
+				{
+					insertUsagerC ($_POST);
+				}
+
+				$resultats = selectAllC("usager");
+				include("vue/vueusagers.php");
+			break;	
+
 		}
 		?>
+
+	<p>
+		</br>
+		</br>
+	</p>
 </body>
 </html>
+
+<?php require 'inc/footer.php'; ?>

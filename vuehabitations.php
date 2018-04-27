@@ -7,6 +7,7 @@
 			<td> Code Postal </td>
 			<td> Ville </td> 
 			<td> Type d'habitation </td>
+			<td> Actions </td>
 		</tr>
 			<?php
 			foreach ($resultats as $unResultat)
