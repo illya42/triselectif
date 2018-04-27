@@ -6,7 +6,8 @@ function controle()
 {
 $con = connexion();
 
-$requete = "
+/*
+	$requete = "
 
 		drop trigger if exists verifage;
 		delimiter //
@@ -24,7 +25,9 @@ $requete = "
 
 		";
 		deconnexion($con);
+*/
 }
+
 
 include("controleur/controleur.php");
 
@@ -34,31 +37,31 @@ if(isset($_POST["Enregistrer"]))
 	{
 		$erreurs = array();
 
-		controle();
+		//controle();
 
 		if(empty($_POST['nom']) || !preg_match('/[a-zA-Z]/', $_POST['nom']))
-		{	
-			$erreurs['nom'] = "Remplissez le champs du Nom avec des caractères valides !";
+		{
+			$erreurs['nom'] = "Remplissez le champs du nom avec des caractères valides !";
 		}
 		if(empty($_POST['adresse']) || !preg_match('/[a-zA-Z]/', $_POST['adresse']))
 		{
-			$erreurs['adresse'] = "Remplissez le champs du Prénom avec des caractères valides !";
+			$erreurs['adresse'] = "Remplissez le champs de l'adresse avec des caractères valides !";
 		}
 		if(empty($_POST['prenom']) || !preg_match('/[a-zA-Z]/', $_POST['prenom']))
 		{
-			$erreurs['prenom'] = "Remplissez le champs de la Catégorie client avec des caractères valides !";
+			$erreurs['prenom'] = "Remplissez le champs du prénom avec des caractères valides !";
 		}
-		if(empty($_POST['civilite']) || !preg_match('/\A\d{5}\z/', $_POST['civilite']))
+		if(empty($_POST['civilite']) || !preg_match('/[a-zA-Z]/', $_POST['civilite']))
 		{
-			$erreurs['civilite'] = "Code postal invalide !";
+			$erreurs['civilite'] = "Veuillez indiquer votre civilité";
 		}
 		if(empty($_POST['datenaiss']) || !preg_match('/\A\d{10}\z/', $_POST['datenaiss']))
 		{
-			$erreurs['datenaiss'] = "Numéro de téléphone invalide !";
+			$erreurs['datenaiss'] = "Date de naissance invalide !";
 		}
 		if($_POST['datenaiss']/365 < 18)
 		{
-			$erreurs['datenaiss'] = "Impossible";
+			$erreurs['datenaiss'] = "Vous devez avoir plus de 18 ans";
 		}
 
 		debug($erreurs);

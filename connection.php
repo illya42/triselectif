@@ -39,6 +39,8 @@ include("controleur/controleur.php");
 
 				if(isset($_POST["Enregistrer"]))
 					{
+					$nom = $_GET['nom'];
+
 					header("Location: index.php?page=5.php");
 
 					$resultat = selectWhereIdUsagerC ($nom);
