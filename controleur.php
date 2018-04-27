@@ -79,7 +79,7 @@
 		return $resultat;
 	}
 
-	function updatePouebelleC ($tab)
+	function updatePoubelleC ($tab)
 	{
 		updatePoubelleM ($tab);
 	}
@@ -88,7 +88,7 @@
 
 		function insertLeveeC ($tab)
 	{
-		insertPoubelleM($tab);
+		insertLeveeM($tab);
 	}
 
 	function deleteLeveeC ($num)

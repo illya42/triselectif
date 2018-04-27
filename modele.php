@@ -94,7 +94,8 @@ function selectAllM ($table)
         $con = connexion();
         $requete = "insert into habitation values
             (
-            null,
+            '".$tab["adresse"]."',
+            '".$tab["codep"]."',
             '".$tab["CP"]."',
             '".$tab["ville"]."',
             '".$tab["type"]."'
@@ -120,7 +121,7 @@ function selectAllM ($table)
     function selectWhereIdHabitationM ($adresse)
     {
         $con = connexion();
-        $requete = "select * from habitation where adresse = ".$adresse.";";
+        $requete = "select * from habitation where adresse = '".$adresse."';";
 
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
@@ -138,12 +139,13 @@ function selectAllM ($table)
         $requete = 
         "update habitation
         set 
-        adresse =          '".$tab['adresse'].       "', 
+        adresse =          '".$tab['adresse'].       "',
+        codep =          '".$tab['codep'].       "', 
         CP =       '".$tab['CP'].             "',
         ville =    '".$tab['ville'].       "',
         type =         '".$tab['type'].         "'
         
-        where adresse = ".$tab['adresse'].";";
+        where adresse = '".$tab['adresse']."';";
 
         echo $requete;
 
@@ -159,6 +161,8 @@ function selectAllM ($table)
         $requete = "insert into poubelle values
             (
             null,
+            '".$tab["code"]."',
+            '".$tab["num"]."',
             '".$tab["couleur"]."',
             '".$tab["nblevees"]."'
             );";
@@ -201,10 +205,12 @@ function selectAllM ($table)
         $requete = 
         "update poubelle
         set 
-        codep =          '".$tab['codep'].       "', 
+        codep =          '".$tab['codep'].       "',
+        code =          '".$tab['code'].       "',  
         couleur =       '".$tab['couleur'].             "',
+        num =       '".$tab['num'].             "',
         nblevees =    '".$tab['nblevees'].       "'
-        
+
         where codep = ".$tab['codep'].";";
 
         echo $requete;

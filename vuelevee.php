@@ -14,9 +14,9 @@
 				<td>".$unResultat['num']."</td>
 				<td>".$unResultat['datelevee']."</td>
 				<td>".$unResultat['poids']."</td>
-				<td> 	<a href='index.php?page=4&action=X&num=".$unResultat['num']."'>
+				<td> 	<a href='index.php?page=3&action=X&num=".$unResultat['num']."'>
 							<img src='image/supprimer.png' width='80' height='80' > </a>
-							<a href='index.php?page=4&action=E&num=".$unResultat['num']."'>
+							<a href='index.php?page=3&action=E&num=".$unResultat['num']."'>
 							<img src='image/editer.jpg' width='80' height='80' > </a>
 				</tr>";
 			}

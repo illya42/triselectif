@@ -31,7 +31,7 @@
 		switch ($page) 
 		{
 
-//						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MESSAGE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
+//						[ ## TABLE : Habitations ##] 					//
 
 			case 1:
 					if(isset($_GET['action']) && isset($_GET['adresse']))
@@ -61,9 +61,10 @@
 					}
 					
 			$resultats = selectAllC("habitation");
-				include("vue/vuehabitation.php");
+				include("vue/vuehabitations.php");
 			break;
 				
+//						[ ## TABLE : Poubelle ##] 					//
 				
 				case 2:
 					if(isset($_GET['action']) && isset($_GET['codep']))
@@ -95,6 +96,8 @@
 					include("vue/vuepoubelle.php");
 					break;
 
+//						[ ## TABLE : Levees ##] 					//
+
 				case 3:
 					if(isset($_GET['action']) && isset($_GET['num']))
 						{
@@ -123,6 +126,8 @@
 					$resultats = selectAllC("levee");
 					include("vue/vuelevee.php");
 					break;
+
+//						[ ## TABLE : TypeDechet ##] 					//
 
 				case 4:
 					if(isset($_GET['action']) && isset($_GET['code']))
@@ -155,6 +160,9 @@
 				$resultats = selectAllC("type_dechet");
 				include("vue/vuetypedechets.php");
 			break;	
+
+//						[ ## TABLE : Usager ##] 					//
+
 		}
 		?>
 </body>
