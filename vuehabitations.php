@@ -1,18 +1,20 @@
 <center>
-	<h2> Habitations </h2>
+	<h2> Mes Habitations </h2>
 	<br/>
-	<table border = 1>
-		<tr><td> Adresse </td>
-			<td> Code Poubelles </td>
-			<td> Code Postal </td>
-			<td> Ville </td> 
-			<td> Type d'habitation </td>
-			<td> Actions </td>
+	<table border = 0>
+		<tr><th> ID </th>
+			<th> Adresse </th>
+			<th> Code Poubelles </th>
+			<th> Code Postal </th>
+			<th> Ville </th> 
+			<th> Type d'habitation </th>
+			<th> Actions </th>
 		</tr>
 			<?php
 			foreach ($resultats as $unResultat)
 			{
 				echo"<tr>
+				<td>".$unResultat['idhab']."</td>
 				<td>".$unResultat['adresse']."</td>
 				<td>".$unResultat['codep']."</td>
 				<td>".$unResultat['CP']."</td>
@@ -30,7 +32,8 @@
 			<h2>Ajout d'une habitation</h2>
 				<form method="post" action="">
 
-					<table border= 1 >
+					<table border= 0 >
+						<tr><td>ID : </td> <td> <input type="text" name="idhab" value="<?php if(isset($resultat)) echo $resultat['idhab'] ; ?>"></td></tr>
 						<tr><td>Adresse : </td> <td> <input type="text" name="adresse" value="<?php if(isset($resultat)) echo $resultat['adresse'] ; ?>"></td></tr>
 						<tr><td>Code des poubelles : </td> <td> <input type="text" name="codep" value="<?php if(isset($resultat)) echo $resultat['codep'] ; ?>"></td></tr>
 						<tr><td>Code Postal : </td> <td> <input type="text" name="CP" value="<?php if(isset($resultat)) echo $resultat['CP'] ; ?>"></td></tr>
@@ -43,6 +46,6 @@
 						</tr>
 
 					</table>
-					<input type="hidden" name="adresse" value="<?php if(isset($resultat)) echo $resultat['adresse'] ; ?>">
+					<input type="hidden" name="idhab" value="<?php if(isset($resultat)) echo $resultat['idhab'] ; ?>">
 				</form>
 </center>

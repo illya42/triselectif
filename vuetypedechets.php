@@ -1,12 +1,12 @@
 <center>
 	<h2> Types de déchets </h2>
 	<br/>
-	<table border = 1>
-		<tr><td> Code </td>
-			<td> Libellé </td>
-			<td> Recyclable </td>
-			<td> Tarif </td> 
-			<td> Actions </td>
+	<table border = 0>
+		<tr><th> Code </th>
+			<th> Libellé </th>
+			<th> Recyclable </th>
+			<th> Tarif </th> 
+			<th> Actions </th>
 		</tr>
 			<?php
 			foreach ($resultats as $unResultat)
@@ -28,7 +28,7 @@
 			<h2>Ajout d'un type de déchet</h2>
 				<form method="post" action="">
 
-					<table border= 1 >
+					<table border= 0 >
 						<tr><td>Code : </td> <td> <input type="text" name="code" value="<?php if(isset($resultat)) echo $resultat['code'] ; ?>"></td></tr>
 						<tr><td>Libellé : </td> <td> <input type="text" name="libelle" value="<?php if(isset($resultat)) echo $resultat['libelle'] ; ?>"></td></tr>
 						<tr><td>Recyclable : </td> <td> <input type="text" name="recyclable" value="<?php if(isset($resultat)) echo $resultat['recyclable'] ; ?>"></td></tr>

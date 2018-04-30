@@ -45,14 +45,14 @@
 		insertHabitationM($tab);
 	}
 
-	function deleteHabitationC ($code)
+	function deleteHabitationC ($idhab)
 	{
-		deleteHabitationM ($code);
+		deleteHabitationM ($idhab);
 	}
 
-	function selectWhereIdHabitationC ($code)
+	function selectWhereIdHabitationC ($idhab)
 	{
-		$resultat = selectWhereIdHabitationM ($code);
+		$resultat = selectWhereIdHabitationM ($idhab);
 		return $resultat;
 	}
 
@@ -114,14 +114,14 @@
 		insertTypeUsagerM($tab);
 	}
 
-	function deleteUsagerC ($nom)
+	function deleteUsagerC ($id)
 	{
-		deleteUsagerM ($nom);
+		deleteUsagerM ($id);
 	}
 
-	function selectWhereIdUsagerC ($nom)
+	function selectWhereIdUsagerC ($id)
 	{
-		$resultat = selectWhereIdUsagerM ($nom);
+		$resultat = selectWhereIdUsagerM ($id);
 		return $resultat;
 	}
 

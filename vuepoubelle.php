@@ -1,13 +1,14 @@
 <center>
 	<h2> Poubelle </h2>
+
 	<br/>
-	<table border = 1>
-		<tr><td> Code </td>
-			<td> Type de déchets </td>
-			<td> Numéro </td>
-			<td> Couleur </td>
-			<td> Nombre levees </td>
-			<td> Actions </td>
+	<table border = 0>
+		<tr><th> Code </th>
+			<th> Type de déchets </th>
+			<th> Numéro </th>
+			<th> Couleur </th>
+			<th> Nombre levees </th>
+			<th> Actions </th>
 		</tr>
 			<?php
 			foreach ($resultats as $unResultat)
@@ -27,10 +28,10 @@
 			?>
 	</table>
 		<br/>
-			<h2>Ajout poubelle</h2>
+			<h2>Ajout d'une poubelle</h2>
 				<form method="post" action="">
 
-					<table border= 1 >
+					<table border= 0 >
 						<tr><td>Code : </td> <td> <input type="text" name="codep" value="<?php if(isset($resultat)) echo $resultat['codep'] ; ?>"></td></tr>
 
 						<tr><td>Type de déchets : </td> <td> <input type="text" name="code" value="<?php if(isset($resultat)) echo $resultat['code'] ; ?>"></td></tr>

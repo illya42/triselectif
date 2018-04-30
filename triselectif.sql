@@ -33,25 +33,27 @@ create table poubelle
 
 create table habitation
 	(
-		adresse char(150) not null,
+		idhab int(5) not null auto_increment,
+		adresse char(150),
 		codep int(5) not null,
 		CP int(5),
 		ville varchar(100),
 		type varchar(100),
-		primary key(adresse),
+		primary key(idhab),
 		foreign key(codep) references poubelle
 	);
 
 create table usager
 	(
-		nom varchar(50) not null,
-		adresse char(150) not null,
+		id int(5) not null auto_increment,
+		nom varchar(50),
+		idhab int(5) not null,
 		prenom varchar(50),
 		civilite enum("Femme", "Homme", "Autre"),
 		datenaiss date,
 		payement boolean,
-		primary key(nom),
-		foreign key(adresse) references adresse
+		primary key(id),
+		foreign key(idhab) references habitation
 	);
 
 insert into type_dechet values
@@ -64,7 +66,7 @@ insert into poubelle values
 	(1, 1, 1, "vert", 1);
 
 insert into habitation values
-	("11 rue du Leader Price", 1, 93120, "Saint-Denis-Capital", "Residence");
+	(1,"11 rue du Leader Price", 1, 93120, "Saint-Denis-Capital", "Residence");
 
 insert into usager values
-	("JEAN", "11 rue du Leader Price", "Pierre", "Autre", "1988-08-07", TRUE);
+	(1,"JEAN", 1, "Pierre", "Autre", "1988-08-07", TRUE);

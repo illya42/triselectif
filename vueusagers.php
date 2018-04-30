@@ -1,19 +1,21 @@
 <center>
 	<h2> Mon profil </h2>
 	<br/>
-	<table border = 1>
-		<tr><td> Nom </td>
-			<td> Prénom </td>
-			<td> Adresse </td>
-			<td> Civilité </td> 
-			<td> Date de naissance </td>
-			<td> Payement </td>
-			<td> Actions </td>
+	<table border = 0>
+		<tr><th> ID </th>
+			<th> Nom </th>
+			<th> Prénom </th>
+			<th> Adresse </th>
+			<th> Civilité </th> 
+			<th> Date de naissance </th>
+			<th> Payement </th>
+			<th> Actions </th>
 		</tr>
 			<?php
 			foreach ($resultats as $unResultat)
 			{
 				echo"<tr>
+				<td>".$unResultat['id']."</td>
 				<td>".$unResultat['nom']."</td>
 				<td>".$unResultat['prenom']."</td>
 				<td>".$unResultat['adresse']."</td>
@@ -32,7 +34,7 @@
 			<h2>Modification du profil</h2>
 				<form method="post" action="">
 
-					<table border= 1 >
+					<table border= 0 >
 						<tr><td>Nom : </td> <td> <input type="text" name="nom" value="<?php if(isset($resultat)) echo $resultat['nom'] ; ?>"></td></tr>
 						<tr><td>Prénom : </td> <td> <input type="text" name="prenom" value="<?php if(isset($resultat)) echo $resultat['prenom'] ; ?>"></td></tr>
 						<tr><td>Adresse : </td> <td> <input type="text" name="adresse" value="<?php if(isset($resultat)) echo $resultat['adresse'] ; ?>"></td></tr>
@@ -47,6 +49,6 @@
 						</tr>
 
 					</table>
-					<input type="hidden" name="nom" value="<?php if(isset($resultat)) echo $resultat['nom'] ; ?>">
+					<input type="hidden" name="id" value="<?php if(isset($resultat)) echo $resultat['id'] ; ?>">
 				</form>
 </center>

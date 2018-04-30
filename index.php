@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-		<link href="style.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="paper.css" rel="stylesheet" type="text/css" media="all" />
 	</br>
 	</br>
 	</br>
@@ -39,17 +39,17 @@
 //						[ ## TABLE : Habitations ##] 					//
 
 			case 1:
-					if(isset($_GET['action']) && isset($_GET['adresse']))
+					if(isset($_GET['action']) && isset($_GET['idhab']))
 					{
 						$action = $_GET['action'];
-						$adresse = $_GET['adresse'];
+						$idhab = $_GET['idhab'];
 						if($action == "X")
 						{
-							deleteHabitationC($adresse);
+							deleteHabitationC($idhab);
 						}
 						else if ($action == "E")
 						{
-							$resultat = selectWhereIdHabitationC ($adresse);
+							$resultat = selectWhereIdHabitationC ($idhab);
 							
 						}
 					}
@@ -169,17 +169,17 @@
 //						[ ## TABLE : Usager ##] 					//
 
 				case 5:
-					if(isset($_GET['action']) && isset($_GET['nom']))
+					if(isset($_GET['action']) && isset($_GET['id']))
 				{
 					$action = $_GET['action'];
-					$nom = $_GET['nom'];
+					$id = $_GET['id'];
 					if($action == "X")
 					{
-						deleteUsagerC ($nom);
+						deleteUsagerC ($id);
 					}
 					else if ($action == "E")
 					{
-						$resultat = selectWhereIdUsagerC ($nom);
+						$resultat = selectWhereIdUsagerC ($id);
 						
 						var_dump($resultat);
 					}
