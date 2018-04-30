@@ -20,9 +20,9 @@
 				<td>".$unResultat['CP']."</td>
 				<td>".$unResultat['ville']."</td>
 				<td>".$unResultat['type']."</td>
-				<td> 	<a href='index.php?page=1&action=X&adresse=".$unResultat['adresse']."'>
+				<td> 	<a href='index.php?page=1&action=X&idhab=".$unResultat['idhab']."'>
 							<img src='image/supprimer.png' width='80' height='80' > </a>
-							<a href='index.php?page=1&action=E&adresse=".$unResultat['adresse']."'>
+							<a href='index.php?page=1&action=E&idhab=".$unResultat['idhab']."'>
 							<img src='image/editer.jpg' width='80' height='80' > </a>
 				</tr>";
 			}

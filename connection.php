@@ -12,42 +12,38 @@ include("controleur/controleur.php");
 
 				<form method="post" action="">
 
-					<div class="form-group">
-
-						<label for="">Nom</label>
-
-						<input type="text" name="nom" value="<?php if(isset($resultat)) echo $resultat['nom'] ; ?>" class="form-control" required></br>
-						
-						<label for="">Prénom</label>
-
-						<input type="text" name="prenom" value="<?php if(isset($resultat)) echo $resultat['prenom'] ; ?>" class="form-control" required></br>
-
-						<label for="">Adresse</label>
-
-						<input type="text" name="adresse" value="<?php if(isset($resultat)) echo $resultat['adresse'] ; ?>" class="form-control" required>
-
-						<input type="hidden" name="nom" value="<?php if(isset($resultat)) echo $resultat['nom'] ; ?>">
-					</div>
+					<table border= 0 >
+						<tr><td>Nom : </td> <td> <input type="text" name="nom" class="form-control" required></td></tr>
+						<tr><td>Prénom : </td> <td> <input type="text" name="prenom" class="form-control" required></td></tr>
+						<tr><td>ID Habitation : </td> <td> <input type="text" name="idhab" class="form-control" required></td></tr>	
 					
-					<input type="reset" name="Annuler" value="Annuler">
-					<input type="submit" name="Enregistrer" value="Se connecter"> 
-				</form>
-			</br>
-				<a href="index.php?">Retour à l'accueil</a>
+						<tr>
 
+							<td> <input type="reset" name="Annuler" value="Annuler"></td>
+							<td> <input type="submit" name="Enregistrer" value="Se connecter"></td>
+						</tr>
+
+					</table>
+					<input type="hidden" name="id" value="<?php if(isset($resultat)) echo $resultat['id'] ; ?>">
+				</form>
 				<?php
 
 				if(isset($_POST["Enregistrer"]))
 					{
-					$nom = $_GET['nom'];
-
-					header("Location: index.php?page=5.php");
-
-					$resultat = selectWhereIdUsagerC ($nom);
+					$nom = $_POST['nom'];
+					$prenom = $_POST['prenom'];
+					$idhab = $_POST['idhab'];
 					
+					echo '<a href="index.php?page=6"> Voir mon profil
+					</a><br/>';
 					exit;
 					}
 
 				?>
+			</br>
+				<a href="index.php?">Retour à l'accueil</a>
+
+				
+				
 
 <?php require 'inc/footer.php'; ?>

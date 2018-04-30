@@ -147,7 +147,7 @@
 					{
 						$resultat = selectWhereIdTypeDechetC ($code);
 						
-						var_dump($resultat);
+						
 					}
 				}
 
@@ -179,9 +179,9 @@
 					}
 					else if ($action == "E")
 					{
-						$resultat = selectWhereIdUsagerC ($id);
+						$resultat = selectWhereIdUsagerC ($nom, $prenom, $idhab);
 						
-						var_dump($resultat);
+						
 					}
 				}
 
@@ -193,6 +193,37 @@
 
 				$resultats = selectAllC("usager");
 				include("vue/vueusagers.php");
+			break;	
+
+			//						[ ## TABLE : Connection ##] 					//
+
+				case 6:
+
+					if(isset($_GET['action']) && isset($_GET['id']))
+				{
+					$action = $_GET['action'];
+					$id = $_GET['id'];
+					$nom = $_GET['nom'];
+					$prenom = $_GET['prenom'];
+					$idhab = $_GET['idhab'];
+					if($action == "X")
+					{
+						deleteUsagerC ($id);
+					}
+					else if ($action == "E")
+					{
+						$resultat = selectWhereIdUsagerC ($nom, $prenom, $idhab);
+					}
+				}
+
+				if(isset($_POST['Modifier']))
+				{
+					updateUsagerC($_POST) ;
+					$resultat = null;
+				}
+
+				$resultats = selectWhereIdUsagerC ($nom, $prenom, $idhab);
+				include("vue/vueconnection.php");
 			break;	
 
 		}

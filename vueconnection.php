@@ -1,3 +1,4 @@
+
 <center>
 	<h2> Mon profil </h2>
 	<br/>
@@ -22,9 +23,9 @@
 				<td>".$unResultat['civilite']."</td>
 				<td>".$unResultat['datenaiss']."</td>
 				<td>".$unResultat['payement']."</td>
-				<td> 	<a href='index.php?page=5&action=X&id=".$unResultat['id']."'>
+				<td> 	<a href='index.php?page=6&action=X&id=".$unResultat['id']."'>
 							<img src='image/supprimer.png' width='80' height='80' > </a>
-							<a href='index.php?page=5&action=E&id=".$unResultat['id']."'>
+							<a href='index.php?page=6&action=E&id=".$unResultat['id']."'>
 							<img src='image/editer.jpg' width='80' height='80' > </a>
 				</tr>";
 			}

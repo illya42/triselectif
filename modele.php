@@ -30,13 +30,12 @@ function selectAllM ($table)
         $requete = "insert into type_dechet values
             (
             null,
-            '".$tab["code"]."',
             '".$tab["libelle"]."',
             '".$tab["recyclable"]."',
             '".$tab["tarif"]."'
             );";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -47,7 +46,7 @@ function selectAllM ($table)
         $con = connexion();
         $requete = "delete from type_dechet where code = ".$code.";";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -61,7 +60,7 @@ function selectAllM ($table)
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
 
-        echo $requete;
+        
 
         deconnexion($con);
 
@@ -80,7 +79,7 @@ function selectAllM ($table)
         
         where code = ".$tab['code'].";";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -101,7 +100,7 @@ function selectAllM ($table)
             '".$tab["type"]."'
             );";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -112,7 +111,7 @@ function selectAllM ($table)
         $con = connexion();
         $requete = "delete from habitation where idhab = '".$idhab."';";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -126,7 +125,7 @@ function selectAllM ($table)
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
 
-        echo $requete;
+        
 
         deconnexion($con);
 
@@ -147,7 +146,7 @@ function selectAllM ($table)
         
         where idhab = '".$tab['idhab']."';";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -167,7 +166,7 @@ function selectAllM ($table)
             '".$tab["nblevees"]."'
             );";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -178,7 +177,7 @@ function selectAllM ($table)
         $con = connexion();
         $requete = "delete from poubelle where codep = ".$codep.";";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -192,7 +191,7 @@ function selectAllM ($table)
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
 
-        echo $requete;
+        
 
         deconnexion($con);
 
@@ -212,7 +211,7 @@ function selectAllM ($table)
 
         where codep = ".$tab['codep'].";";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -226,12 +225,12 @@ function selectAllM ($table)
         $con = connexion();
         $requete = "insert into levee values
             (
-            '".$tab["num"]."',
+            null,
             '".$tab["datelevee"]."',
             '".$tab["poids"]."'
             );";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -242,7 +241,7 @@ function selectAllM ($table)
         $con = connexion();
         $requete = "delete from levee where num = ".$num.";";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -256,7 +255,7 @@ function selectAllM ($table)
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
 
-        echo $requete;
+        
 
         deconnexion($con);
 
@@ -275,7 +274,7 @@ function selectAllM ($table)
         
         where num = ".$tab['num'].";";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -290,14 +289,14 @@ function selectAllM ($table)
             (
             null,
             '".$tab["nom"]."',
-            '".$tab["adresse"]."',
+            '".$tab["idhab"]."',
             '".$tab["prenom"]."',
             '".$tab["civilite"]."',
             '".$tab["datenaiss"]."',
             '".$tab["payement"]."'
             );";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -308,21 +307,21 @@ function selectAllM ($table)
         $con = connexion();
         $requete = "delete from usager where id = ".$id.";";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
     }
 
-    function selectWhereIdUsagerM ($id)
+    function selectWhereIdUsagerM ($nom, $prenom, $idhab)
     {
         $con = connexion();
-        $requete = "select * from usager where id = '".$id."';";
+        $requete = "select * from usager where nom = '".$nom."' and prenom = '".$prenom."' and idhab = '".$idhab."';";
 
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
 
-        echo $requete;
+        
 
         deconnexion($con);
 
@@ -336,7 +335,7 @@ function selectAllM ($table)
         "update usager
         set 
         nom =          '".$tab['nom'].       "', 
-        adresse =       '".$tab['adresse'].             "',
+        idhab =       '".$tab['idhab'].             "',
         prenom =          '".$tab['prenom'].       "',
         civilite =          '".$tab['civilite'].       "',
         datenaiss =          '".$tab['datenaiss'].       "',
@@ -344,7 +343,7 @@ function selectAllM ($table)
         
         where id = '".$tab['id']."';";
 
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);

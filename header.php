@@ -15,7 +15,7 @@
 
     <!-- Bootstrap core CSS -->
     
-    <link href="style.css" rel="stylesheet">
+    <link href="paper.css" rel="stylesheet">
 
   </head>
 

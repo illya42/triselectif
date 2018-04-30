@@ -29,7 +29,7 @@
 				<form method="post" action="">
 
 					<table border= 0 >
-						<tr><td>Code : </td> <td> <input type="text" name="code" value="<?php if(isset($resultat)) echo $resultat['code'] ; ?>"></td></tr>
+						
 						<tr><td>Libellé : </td> <td> <input type="text" name="libelle" value="<?php if(isset($resultat)) echo $resultat['libelle'] ; ?>"></td></tr>
 						<tr><td>Recyclable : </td> <td> <input type="text" name="recyclable" value="<?php if(isset($resultat)) echo $resultat['recyclable'] ; ?>"></td></tr>
 						<tr><td>Tarif : </td> <td> <input type="text" name="tarif" value="<?php if(isset($resultat)) echo $resultat['tarif'] ; ?>"></td></tr>

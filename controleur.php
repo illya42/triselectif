@@ -111,7 +111,7 @@
 
 	function insertUsagerC ($tab)
 	{
-		insertTypeUsagerM($tab);
+		insertUsagerM($tab);
 	}
 
 	function deleteUsagerC ($id)
@@ -119,9 +119,9 @@
 		deleteUsagerM ($id);
 	}
 
-	function selectWhereIdUsagerC ($id)
+	function selectWhereIdUsagerC ($nom, $prenom, $idhab)
 	{
-		$resultat = selectWhereIdUsagerM ($id);
+		$resultat = selectWhereIdUsagerM ($nom, $prenom, $idhab);
 		return $resultat;
 	}
 

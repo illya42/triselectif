@@ -2,11 +2,12 @@
 
 require 'inc/header.php'; 
 
+/*
 function controle()
 {
 $con = connexion();
 
-/*
+
 	$requete = "
 
 		drop trigger if exists verifage;
@@ -25,10 +26,10 @@ $con = connexion();
 
 		";
 		deconnexion($con);
-*/
+
 }
 
-
+*/
 include("controleur/controleur.php");
 
 if(isset($_POST["Enregistrer"]))
@@ -43,38 +44,36 @@ if(isset($_POST["Enregistrer"]))
 		{
 			$erreurs['nom'] = "Remplissez le champs du nom avec des caractères valides !";
 		}
-		if(empty($_POST['adresse']) || !preg_match('/[a-zA-Z]/', $_POST['adresse']))
+		if(empty($_POST['idhab']) || !preg_match('/[0-9]/', $_POST['idhab']))
 		{
-			$erreurs['adresse'] = "Remplissez le champs de l'adresse avec des caractères valides !";
+			$erreurs['idhab'] = "Remplissez le champs de l'adresse avec des caractères valides !";
 		}
 		if(empty($_POST['prenom']) || !preg_match('/[a-zA-Z]/', $_POST['prenom']))
 		{
 			$erreurs['prenom'] = "Remplissez le champs du prénom avec des caractères valides !";
 		}
-		if(empty($_POST['civilite']) || !preg_match('/[a-zA-Z]/', $_POST['civilite']))
+		if(empty($_POST['civilite']) || !preg_match('/[Homme,Femme,Autre]/', $_POST['prenom']))
 		{
-			$erreurs['civilite'] = "Veuillez indiquer votre civilité";
+			$erreurs['civilite'] = "Veuillez indiquer votre civilité : Homme, Femme ou Autre";
 		}
-		if(empty($_POST['datenaiss']) || !preg_match('/\A\d{10}\z/', $_POST['datenaiss']))
+		if(empty($_POST['datenaiss']) || !preg_match('/[0-9]/', $_POST['datenaiss']))
 		{
 			$erreurs['datenaiss'] = "Date de naissance invalide !";
-		}
-		if($_POST['datenaiss']/365 < 18)
-		{
-			$erreurs['datenaiss'] = "Vous devez avoir plus de 18 ans";
 		}
 
 		debug($erreurs);
 
 		if(!$erreurs)
-		{
+			{
 			insertUsagerC($_POST);
 
 			popup();
+			}
 		}
-	}
-	
+		
 }
+	
+
 
 
 ?>
@@ -85,37 +84,29 @@ if(isset($_POST["Enregistrer"]))
 <h1>Formulaire d'inscription</h1>
 
 				<form method="post" action="">
-					<div class="form-group">
 
-						<label for="">Nom</label>
+					<table border= 0 >
+						<tr><td>Nom : </td> <td> <input type="text" name="nom" class="form-control" required></td></tr>
+						<tr><td>Prénom : </td> <td> <input type="text" name="prenom" class="form-control" required></td></tr>
+						<tr><td>ID Habitation : </td> <td> <input type="text" name="idhab" class="form-control" required></td></tr>
+						<tr><td>Civilité : </td> <td>
+						<select name="civilite">
+						<option value="Homme"> Homme </option>
+						<option value="Femme"> Femme </option>
+						<option value="Autre"> Autre </option>
+						</select>
 
-						<input type="text" name="nom" value="<?php if(isset($resultat)) echo $resultat['nom'] ; ?>" class="form-control" ></br>
-
-						<label for="">Prénom</label>
-
-						<input type="text" name="prenom" value="<?php if(isset($resultat)) echo $resultat['prenom'] ; ?>" class="form-control" ></br>
-
-
-						<label for="">Adresse</label>
-
-						<input type="text" name="adresse" value="<?php if(isset($resultat)) echo $resultat['adresse'] ; ?>" class="form-control" ></br>
-
-
-						<label for="">Civilité</label>
-
-						<input type="text" name="civilite" value="<?php if(isset($resultat)) echo $resultat['civilite'] ; ?>" class="form-control" ></br>
-
-
-						<label for="">Date de Naissance</label>
-
-						<input type="date" name="datenaiss" value="<?php if(isset($resultat)) echo $resultat['datenaiss'] ; ?>" class="form-control" ></br>
+						<tr><td>Date de naissance : </td> <td> <input type="date" name="datenaiss" class="form-control" required></td></tr>
+						<tr><td>Payement : </td> <td> <input type="text" name="payement" class="form-control" required></td></tr>
 						
-						<input type="hidden" name="nom" value="<?php if(isset($resultat)) echo $resultat['nom'] ; ?>">
-						</div>
+						<tr>
 
-						<input type="reset" name="Annuler" value="Annuler">
-						<input type="submit" name="Enregistrer" value="S'inscrire">
+							<td> <input type="reset" name="Annuler" value="Annuler"></td>
+							<td> <input type="submit" name="Enregistrer" value="Enregistrer"></td>
+						</tr>
 
+					</table>
+					<input type="hidden" name="id" value="<?php if(isset($resultat)) echo $resultat['id'] ; ?>">
 				</form>
 			</br>
 				<a href="index.php?">Retour à l'accueil</a>

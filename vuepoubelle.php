@@ -1,5 +1,5 @@
 <center>
-	<h2> Poubelle </h2>
+	<h2> Mes Poubelles </h2>
 
 	<br/>
 	<table border = 0>
@@ -31,14 +31,19 @@
 			<h2>Ajout d'une poubelle</h2>
 				<form method="post" action="">
 
-					<table border= 0 >
-						<tr><td>Code : </td> <td> <input type="text" name="codep" value="<?php if(isset($resultat)) echo $resultat['codep'] ; ?>"></td></tr>
+					<div title="vert : Verre, jaune : plastique et emballage, noir : Autres">Détails sur les couleurs</div>
 
+					<table border= 0 >
 						<tr><td>Type de déchets : </td> <td> <input type="text" name="code" value="<?php if(isset($resultat)) echo $resultat['code'] ; ?>"></td></tr>
 
 						<tr><td>Numero : </td> <td> <input type="text" name="num" value="<?php if(isset($resultat)) echo $resultat['num'] ; ?>"></td></tr>
 
-						<tr><td>Couleur : </td> <td> <input type="text" name="couleur" value="<?php if(isset($resultat)) echo $resultat['couleur'] ; ?>"></td></tr>
+							<tr><td>Couleur : </td> <td> 
+								<select name="couleur" value="<?php if(isset($resultat)) echo $resultat['couleur'] ; ?>">
+						<option value="vert"> vert </option>
+						<option value="jaune"> jaune </option>
+						<option value="noir"> noir </option>
+						</select>
 
 						<tr><td>Nombre Levees : </td> <td> <input type="text" name="nblevees" value="<?php if(isset($resultat)) echo $resultat['nblevees'] ; ?>"></td></tr>
 						
