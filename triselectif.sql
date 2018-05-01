@@ -47,12 +47,12 @@ create table usager
 	(
 		id int(5) not null auto_increment,
 		nom varchar(50),
-		idhab int(5) not null,
 		prenom varchar(50),
+		mdp varchar(50),
+		idhab int(5) not null,
 		civilite enum("Femme", "Homme", "Autre"),
 		datenaiss date,
 		payement boolean,
-		mdp varchar(50),
 		primary key(id),
 		foreign key(idhab) references habitation
 	);
@@ -70,4 +70,4 @@ insert into habitation values
 	(1,"11 rue du Leader Price", 1, 93120, "Saint-Denis-Capital", "Residence");
 
 insert into usager values
-	(1,"JEAN", 1, "Pierre", "Autre", "1988-08-07","123", TRUE);
+	(1,"JEAN", "Pierre", "123", 1, "Autre", "1988-08-07", TRUE);

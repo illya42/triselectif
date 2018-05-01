@@ -334,9 +334,10 @@ function selectAllM ($table)
             '".$tab["idhab"]."',
             '".$tab["civilite"]."',
             '".$tab["datenaiss"]."',
-            '".$tab["payement"]."'
-            
+            '".$tab["payement"]."'  
             );";
+
+        echo $requete;
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -351,10 +352,10 @@ function selectAllM ($table)
         deconnexion($con);
     }
 
-    function selectWhereIdUsagerM ($nom, $prenom, $idhab, $mdp)
+    function selectWhereIdUsagerM ($id)
     {
         $con = connexion();
-        $requete = "select * from usager where nom = '".$nom."' and prenom = '".$prenom."' and idhab = '".$idhab."' and mdp = '".$mdp."';";
+        $requete = "select * from usager where id = ".$id.";";
 
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);

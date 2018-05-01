@@ -179,7 +179,7 @@
 					}
 					else if ($action == "E")
 					{
-						$resultat = selectWhereIdUsagerC ($nom, $prenom, $idhab);	
+						$resultat = selectWhereIdUsagerC ($id);	
 					}
 				}
 
