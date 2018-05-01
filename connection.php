@@ -15,7 +15,8 @@ include("controleur/controleur.php");
 					<table border= 0 >
 						<tr><td>Nom : </td> <td> <input type="text" name="nom" class="form-control" required></td></tr>
 						<tr><td>Prénom : </td> <td> <input type="text" name="prenom" class="form-control" required></td></tr>
-						<tr><td>ID Habitation : </td> <td> <input type="text" name="idhab" class="form-control" required></td></tr>	
+						<tr><td>ID Habitation : </td> <td> <input type="text" name="idhab" class="form-control" required></td></tr>
+						<tr><td>Mot de passe : </td> <td> <input type="text" name="mdp" class="form-control" required></td></tr>		
 					
 						<tr>
 
@@ -33,6 +34,7 @@ include("controleur/controleur.php");
 					$nom = $_POST['nom'];
 					$prenom = $_POST['prenom'];
 					$idhab = $_POST['idhab'];
+					$mdp = $_POST['mdp'];
 					
 					echo '<a href="index.php?page=6"> Voir mon profil
 					</a><br/>';

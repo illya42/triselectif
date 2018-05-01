@@ -179,9 +179,7 @@
 					}
 					else if ($action == "E")
 					{
-						$resultat = selectWhereIdUsagerC ($nom, $prenom, $idhab);
-						
-						
+						$resultat = selectWhereIdUsagerC ($nom, $prenom, $idhab);	
 					}
 				}
 
@@ -206,6 +204,7 @@
 					$nom = $_GET['nom'];
 					$prenom = $_GET['prenom'];
 					$idhab = $_GET['idhab'];
+					$mdp = $_GET['mdp'];
 					if($action == "X")
 					{
 						deleteUsagerC ($id);
@@ -222,7 +221,7 @@
 					$resultat = null;
 				}
 
-				$resultats = selectWhereIdUsagerC ($nom, $prenom, $idhab);
+				$resultats = selectAllC("usager");
 				include("vue/vueconnection.php");
 			break;	
 

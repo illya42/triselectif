@@ -4,7 +4,7 @@
 	function selectAllC($table)
 	{
 		//traitement des données
-		if($table == "type_dechet" || $table == "levee" || $table == "habitation")
+		if($table == "type_dechet" || $table == "levee" || $table == "habitation" || $table == "usager")
 		{
 			$resultat = selectAllM($table);
 			return $resultat;
@@ -125,9 +125,9 @@
 		deleteUsagerM ($id);
 	}
 
-	function selectWhereIdUsagerC ($nom, $prenom, $idhab)
+	function selectWhereIdUsagerC ($nom, $prenom, $idhab, $mdp)
 	{
-		$resultat = selectWhereIdUsagerM ($nom, $prenom, $idhab);
+		$resultat = selectWhereIdUsagerM ($nom, $prenom, $idhab, $mdp);
 		return $resultat;
 	}
 

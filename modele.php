@@ -229,8 +229,6 @@ function selectAllM ($table)
 
         where codep = ".$tab['codep'].";";
 
-        
-
         mysqli_query($con, $requete);
         deconnexion($con);
     }
@@ -278,9 +276,7 @@ function selectAllM ($table)
             null,
             '".$tab["datelevee"]."',
             '".$tab["poids"]."'
-            );";
-
-        
+            );"; 
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -289,9 +285,7 @@ function selectAllM ($table)
     function deleteLeveeM ($num)
     {
         $con = connexion();
-        $requete = "delete from levee where num = ".$num.";";
-
-        
+        $requete = "delete from levee where num = ".$num.";"; 
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -303,9 +297,7 @@ function selectAllM ($table)
         $requete = "select * from levee where num = ".$num.";";
 
         $resultat = mysqli_query($con, $requete);
-        $ligne = mysqli_fetch_assoc($resultat);
-
-        
+        $ligne = mysqli_fetch_assoc($resultat); 
 
         deconnexion($con);
 
@@ -324,8 +316,6 @@ function selectAllM ($table)
         
         where num = ".$tab['num'].";";
 
-        
-
         mysqli_query($con, $requete);
         deconnexion($con);
     }
@@ -339,14 +329,14 @@ function selectAllM ($table)
             (
             null,
             '".$tab["nom"]."',
-            '".$tab["idhab"]."',
             '".$tab["prenom"]."',
+            '".$tab["mdp"]."',
+            '".$tab["idhab"]."',
             '".$tab["civilite"]."',
             '".$tab["datenaiss"]."',
             '".$tab["payement"]."'
+            
             );";
-
-        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -357,21 +347,17 @@ function selectAllM ($table)
         $con = connexion();
         $requete = "delete from usager where id = ".$id.";";
 
-        
-
         mysqli_query($con, $requete);
         deconnexion($con);
     }
 
-    function selectWhereIdUsagerM ($nom, $prenom, $idhab)
+    function selectWhereIdUsagerM ($nom, $prenom, $idhab, $mdp)
     {
         $con = connexion();
-        $requete = "select * from usager where nom = '".$nom."' and prenom = '".$prenom."' and idhab = '".$idhab."';";
+        $requete = "select * from usager where nom = '".$nom."' and prenom = '".$prenom."' and idhab = '".$idhab."' and mdp = '".$mdp."';";
 
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
-
-        
 
         deconnexion($con);
 
@@ -392,8 +378,6 @@ function selectAllM ($table)
         payement =    '".$tab['payement'].       "'
         
         where id = '".$tab['id']."';";
-
-        
 
         mysqli_query($con, $requete);
         deconnexion($con);

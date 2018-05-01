@@ -52,11 +52,11 @@ if(isset($_POST["Enregistrer"]))
 		{
 			$erreurs['prenom'] = "Remplissez le champs du prénom avec des caractères valides !";
 		}
-		if(empty($_POST['mdp']) || preg_match('~(?=.*[0-9])(?=.*[a-z])^[a-z0-9]{5,15}$~', $_POST['mdp']))
+		if(empty($_POST['mdp']) || preg_match('/~(?=.*[0-9])(?=.*[a-z])^[a-z0-9]{5,15}$~/', $_POST['mdp']))
 		{
 			$erreurs['mdp'] = "Le mot de passe doit contenir des lettres et des chiffres !";
 		}
-		if(empty($_POST['civilite']) || !preg_match('/[Homme,Femme,Autre]/', $_POST['prenom']))
+		if(empty($_POST['civilite']) || !preg_match('/[Homme,Femme,Autre]/', $_POST['civilite']))
 		{
 			$erreurs['civilite'] = "Veuillez indiquer votre civilité : Homme, Femme ou Autre";
 		}

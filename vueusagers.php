@@ -5,6 +5,7 @@
 		<tr><th> ID </th>
 			<th> Nom </th>
 			<th> Prénom </th>
+			<th> Mot de passe </th>
 			<th> ID Habitation </th>
 			<th> Civilité </th> 
 			<th> Date de naissance </th>
@@ -18,10 +19,12 @@
 				<td>".$unResultat['id']."</td>
 				<td>".$unResultat['nom']."</td>
 				<td>".$unResultat['prenom']."</td>
+				<td>".$unResultat['mdp']."</td>
 				<td>".$unResultat['idhab']."</td>
 				<td>".$unResultat['civilite']."</td>
 				<td>".$unResultat['datenaiss']."</td>
 				<td>".$unResultat['payement']."</td>
+
 				<td> 	<a href='index.php?page=5&action=X&id=".$unResultat['id']."'>
 							<img src='image/supprimer.png' width='80' height='80' > </a>
 							<a href='index.php?page=5&action=E&id=".$unResultat['id']."'>
@@ -37,6 +40,7 @@
 					<table border= 0 >
 						<tr><td>Nom : </td> <td> <input type="text" name="nom" value="<?php if(isset($resultat)) echo $resultat['nom'] ; ?>"></td></tr>
 						<tr><td>Prénom : </td> <td> <input type="text" name="prenom" value="<?php if(isset($resultat)) echo $resultat['prenom'] ; ?>"></td></tr>
+						<tr><td>Mot de passe : </td> <td> <input type="text" name="mdp" value="<?php if(isset($resultat)) echo $resultat['mdp'] ; ?>"></td></tr>
 						<tr><td>ID Habitation : </td> <td> <input type="text" name="idhab" value="<?php if(isset($resultat)) echo $resultat['idhab'] ; ?>"></td></tr>
 						<tr><td>Civilité : </td> <td> <input type="text" name="civilite" value="<?php if(isset($resultat)) echo $resultat['civilite'] ; ?>"></td></tr>
 						<tr><td>Date de naissance : </td> <td> <input type="date" name="datenaiss" value="<?php if(isset($resultat)) echo $resultat['datenaiss'] ; ?>"></td></tr>
