@@ -186,13 +186,31 @@ function selectAllM ($table)
     function selectWhereIdPoubelleM ($codep)
     {
         $con = connexion();
-        $requete = "select * from poubelle where codep = ".$codep.";";
+        $requete = "select 
+        codep, 
+        t.code,
+        l.num,
+        p.couleur,
+        p.nblevees,
+        t.libelle as type,
+        l.datelevee as datel
+
+        from 
+
+        poubelle p,
+        type_dechet t,
+        levee l
+
+         where 
+
+         p.code = t.code
+         and
+         p.num = l.num
+         and
+         codep = ".$codep.";";
 
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
-
-        
-
         deconnexion($con);
 
         return $ligne;
@@ -217,6 +235,38 @@ function selectAllM ($table)
         deconnexion($con);
     }
 
+
+    function selectAllPoubelleM()
+    {
+        $con=connexion();
+        $requete="select 
+        p.codep, 
+        t.code,
+        l.num,
+        p.couleur,
+        p.nblevees,
+        t.libelle as libellepoubelle,
+        l.datelevee as leveepoubelle
+
+        from 
+
+        poubelle p,
+        type_dechet t,
+        levee l
+
+         where 
+
+         p.code = t.code
+         and
+         p.num = l.num
+
+         order by codep
+         ;";
+
+       $resultat = mysqli_query($con,$requete);
+        deconnexion($con);
+        return $resultat;
+    }
 
 //                      [ ## TABLE : levees ##]                     //
 

@@ -52,6 +52,10 @@ if(isset($_POST["Enregistrer"]))
 		{
 			$erreurs['prenom'] = "Remplissez le champs du prénom avec des caractères valides !";
 		}
+		if(empty($_POST['mdp']) || preg_match('~(?=.*[0-9])(?=.*[a-z])^[a-z0-9]{5,15}$~', $_POST['mdp']))
+		{
+			$erreurs['mdp'] = "Le mot de passe doit contenir des lettres et des chiffres !";
+		}
 		if(empty($_POST['civilite']) || !preg_match('/[Homme,Femme,Autre]/', $_POST['prenom']))
 		{
 			$erreurs['civilite'] = "Veuillez indiquer votre civilité : Homme, Femme ou Autre";
@@ -73,7 +77,7 @@ if(isset($_POST["Enregistrer"]))
 		
 }
 	
-
+$civilite_default ='Homme';
 
 
 ?>
@@ -88,10 +92,13 @@ if(isset($_POST["Enregistrer"]))
 					<table border= 0 >
 						<tr><td>Nom : </td> <td> <input type="text" name="nom" class="form-control" required></td></tr>
 						<tr><td>Prénom : </td> <td> <input type="text" name="prenom" class="form-control" required></td></tr>
+						<tr><td>Mot de passe : </td> <td> <input type="text" name="mdp" class="form-control" required></td></tr>
 						<tr><td>ID Habitation : </td> <td> <input type="text" name="idhab" class="form-control" required></td></tr>
 						<tr><td>Civilité : </td> <td>
 						<select name="civilite">
-						<option value="Homme"> Homme </option>
+						<option value='<?php echo $civilite_default?>' selected='selected'>
+							<?php echo $civilite_default ?>
+						</option>
 						<option value="Femme"> Femme </option>
 						<option value="Autre"> Autre </option>
 						</select>

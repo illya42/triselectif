@@ -52,6 +52,7 @@ create table usager
 		civilite enum("Femme", "Homme", "Autre"),
 		datenaiss date,
 		payement boolean,
+		mdp varchar(50),
 		primary key(id),
 		foreign key(idhab) references habitation
 	);
@@ -69,4 +70,4 @@ insert into habitation values
 	(1,"11 rue du Leader Price", 1, 93120, "Saint-Denis-Capital", "Residence");
 
 insert into usager values
-	(1,"JEAN", 1, "Pierre", "Autre", "1988-08-07", TRUE);
+	(1,"JEAN", 1, "Pierre", "Autre", "1988-08-07","123", TRUE);

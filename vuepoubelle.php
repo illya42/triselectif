@@ -7,7 +7,9 @@
 			<th> Type de déchets </th>
 			<th> Numéro </th>
 			<th> Couleur </th>
-			<th> Nombre levees </th>
+			<th> Nombre de levées </th>
+			<th> Libellé </th>
+			<th> Date de la levée </th>
 			<th> Actions </th>
 		</tr>
 			<?php
@@ -19,6 +21,8 @@
 				<td>".$unResultat['num']."</td>
 				<td>".$unResultat['couleur']."</td>
 				<td>".$unResultat['nblevees']."</td>
+				<td>".$unResultat['libellepoubelle']."</td>
+				<td>".$unResultat['leveepoubelle']."</td>
 				<td> 	<a href='index.php?page=2&action=X&codep=".$unResultat['codep']."'>
 							<img src='image/supprimer.png' width='80' height='80' > </a>
 							<a href='index.php?page=2&action=E&codep=".$unResultat['codep']."'>
@@ -46,6 +50,7 @@
 						</select>
 
 						<tr><td>Nombre Levees : </td> <td> <input type="text" name="nblevees" value="<?php if(isset($resultat)) echo $resultat['nblevees'] ; ?>"></td></tr>
+
 						
 							<td> <input type="reset" name="Annuler" value="Annuler"></td>
 							<td> <input type="submit" name="Enregistrer" value="Enregistrer"> 

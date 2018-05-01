@@ -4,7 +4,7 @@
 	function selectAllC($table)
 	{
 		//traitement des données
-		if($table == "type_dechet" || $table == "levee" || $table == "poubelle" || $table == "habitation" || $table == "usager")
+		if($table == "type_dechet" || $table == "levee" || $table == "habitation")
 		{
 			$resultat = selectAllM($table);
 			return $resultat;
@@ -82,6 +82,12 @@
 	function updatePoubelleC ($tab)
 	{
 		updatePoubelleM ($tab);
+	}
+
+	function selectAllPoubelleC()
+	{
+		$resultat = selectAllPoubelleM();
+		return $resultat;
 	}
 
 	//						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Levees !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//

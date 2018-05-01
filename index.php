@@ -97,7 +97,7 @@
 							insertPoubelleC($_POST);
 						}
 
-					$resultats = selectAllC("poubelle");
+					$resultats = selectAllPoubelleC();
 					include("vue/vuepoubelle.php");
 					break;
 
