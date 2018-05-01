@@ -1,7 +1,9 @@
 <?php
 	require 'inc/header.php';
 
-	include("controleur/controleur.php")
+	include("controleur/controleur.php");
+
+	include ("controleur/Controleur.class.php");
 ?>
 
 <!DOCTYPE html>

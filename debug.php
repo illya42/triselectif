@@ -14,6 +14,6 @@ function popup()
 	echo "<br/>";
 	echo "<br/>";
 	echo"<h4>INSCRIPTION CONFIRMÉE</h4>";
-	echo"<a href ='index.php?page=5'>Voir mon profil</a>";
+	echo"<a href ='index.php?page=5'><h5>Voir mon profil<h5></a>";
 }
 ?>

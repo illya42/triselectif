@@ -337,7 +337,6 @@ function selectAllM ($table)
             '".$tab["payement"]."'  
             );";
 
-        echo $requete;
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -347,6 +346,8 @@ function selectAllM ($table)
     {
         $con = connexion();
         $requete = "delete from usager where id = ".$id.";";
+
+        echo $requete;
 
         mysqli_query($con, $requete);
         deconnexion($con);

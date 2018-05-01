@@ -69,6 +69,7 @@ if(isset($_POST["Enregistrer"]))
 
 		if(!$erreurs)
 			{
+
 			insertUsagerC($_POST);
 
 			popup();
@@ -104,7 +105,11 @@ $civilite_default ='Homme';
 						</select>
 
 						<tr><td>Date de naissance : </td> <td> <input type="date" name="datenaiss" class="form-control" required></td></tr>
-						<tr><td>Payement : </td> <td> <input type="text" name="payement" class="form-control" required></td></tr>
+						<tr><td>Payement : </td> <td>
+						<select name="payement">
+						<option value="1"> Oui </option>
+						<option value="0"> Non </option>
+						</select>
 						
 						<tr>
 
