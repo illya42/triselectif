@@ -33,7 +33,7 @@
 				<form method="post" action="">
 
 					<table border= 0 >
-						<tr><td>ID : </td> <td> <input type="text" name="idhab" value="<?php if(isset($resultat)) echo $resultat['idhab'] ; ?>"></td></tr>
+						
 						<tr><td>Adresse : </td> <td> <input type="text" name="adresse" value="<?php if(isset($resultat)) echo $resultat['adresse'] ; ?>"></td></tr>
 						<tr><td>Code des poubelles : </td> <td> <input type="text" name="codep" value="<?php if(isset($resultat)) echo $resultat['codep'] ; ?>"></td></tr>
 						<tr><td>Code Postal : </td> <td> <input type="text" name="CP" value="<?php if(isset($resultat)) echo $resultat['CP'] ; ?>"></td></tr>

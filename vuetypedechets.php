@@ -31,7 +31,11 @@
 					<table border= 0 >
 						
 						<tr><td>Libellé : </td> <td> <input type="text" name="libelle" value="<?php if(isset($resultat)) echo $resultat['libelle'] ; ?>"></td></tr>
-						<tr><td>Recyclable : </td> <td> <input type="text" name="recyclable" value="<?php if(isset($resultat)) echo $resultat['recyclable'] ; ?>"></td></tr>
+						<tr><td>Recyclable : </td> <td> 
+								<select name="recyclable" value="<?php if(isset($resultat)) echo $resultat['recyclable'] ; ?>">
+						<option value="1"> Recyclable </option>
+						<option value="0"> Non recyclable </option>
+						</select>
 						<tr><td>Tarif : </td> <td> <input type="text" name="tarif" value="<?php if(isset($resultat)) echo $resultat['tarif'] ; ?>"></td></tr>
 						
 							<td> <input type="reset" name="Annuler" value="Annuler"></td>

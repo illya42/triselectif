@@ -199,21 +199,17 @@
 
 				case 6:
 
-					if(isset($_GET['action']) && isset($_GET['id']))
+				if(isset($_GET['action']) && isset($_GET['id']))
 				{
 					$action = $_GET['action'];
 					$id = $_GET['id'];
-					$nom = $_GET['nom'];
-					$prenom = $_GET['prenom'];
-					$idhab = $_GET['idhab'];
-					$mdp = $_GET['mdp'];
 					if($action == "X")
 					{
 						deleteUsagerC ($id);
 					}
 					else if ($action == "E")
 					{
-						$resultat = selectWhereIdUsagerC ($nom, $prenom, $idhab);
+						$resultat = selectWhereIdUsagerC ($id);	
 					}
 				}
 
@@ -222,11 +218,10 @@
 					updateUsagerC($_POST) ;
 					$resultat = null;
 				}
-
-				$resultats = selectAllC("usager");
-				include("vue/vueconnection.php");
-			break;	
-
+				
+				$resultats = selectWhereIdUsagerC ($_GET);
+				include("vue/vueusagers.php");
+			break;
 		}
 		?>
 

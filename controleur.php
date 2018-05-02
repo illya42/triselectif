@@ -125,9 +125,9 @@
 		deleteUsagerM ($id);
 	}
 
-	function selectWhereIdUsagerC ($id)
+	function selectWhereIdUsagerC ($tab)
 	{
-		$resultat = selectWhereIdUsagerM ($id);
+		$resultat = selectWhereIdUsagerM ($tab);
 		return $resultat;
 	}
 
